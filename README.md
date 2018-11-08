@@ -4,6 +4,15 @@ matplotlib-cpp
 Welcome to matplotlib-cpp, possibly the simplest C++ plotting library.
 It is built to resemble the plotting API used by Matlab and matplotlib.
 
+## 安装
+- 把header放到`/usr/local/include`里面
+- 在cmake里添加
+```
+find_package(PythonLibs 2.7)
+add_executable(test test.cc)
+target_include_directories(test PRIVATE ${PYTHON_INCLUDE_DIRS})
+target_link_libraries(test ${PYTHON_LIBRARIES})
+```
 
 
 Usage
